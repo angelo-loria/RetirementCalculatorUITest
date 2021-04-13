@@ -1,14 +1,14 @@
-const LoginPage = require('../pageobjects/login.page');
-const SecurePage = require('../pageobjects/secure.page');
+const RetirementSavingsCalculator = require('../pageobjects/retirementSavingsCalculator.page');
+// const SecurePage = require('../pageobjects/secure.page');
 
-describe('My Login application', () => {
-    it('should login with valid credentials', () => {
-        LoginPage.open();
+describe('Retirement Savings Calculator', () => {
+    it('allows submit form with all required fields filled in', () => {
+        RetirementSavingsCalculator.open();        
 
-        LoginPage.login('tomsmith', 'SuperSecretPassword!');
-        expect(SecurePage.flashAlert).toBeExisting();
-        expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!');
+        // LoginPage.login('tomsmith', 'SuperSecretPassword!');
+        // expect(SecurePage.flashAlert).toBeExisting();
+        // expect(SecurePage.flashAlert).toHaveTextContaining(
+        //     'You logged into a secure area!');
     });
 });
 
