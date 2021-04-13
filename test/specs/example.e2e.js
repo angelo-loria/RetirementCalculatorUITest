@@ -4,7 +4,8 @@ const RetirementSavingsCalculator = require('../pageobjects/retirementSavingsCal
 describe('Retirement Savings Calculator', () => {
     it('allows submit form with all required fields filled in', () => {
         RetirementSavingsCalculator.open();        
-
+        RetirementSavingsCalculator.inputCurrentAge("30");
+        browser.debug();
         // LoginPage.login('tomsmith', 'SuperSecretPassword!');
         // expect(SecurePage.flashAlert).toBeExisting();
         // expect(SecurePage.flashAlert).toHaveTextContaining(
