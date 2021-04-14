@@ -8,26 +8,22 @@ class RetirementSavingsCalculator extends Page {
      * define selectors using getter methods, 
      * these are evaluated when you access the property
      */
-    get fieldCurrentAge () { return $('#current-age') }
-    get fieldRetirementAge () { return $('#retirement-age') }
+    get inputCurrentAge () { return $('#current-age') }
+    get inputRetirementAge () { return $('#retirement-age') }
+    get inputCurrentAnnualIncome () { return $('#current-income') }
+    get inputSpouseAnnualIncome () { return $('#spouse-income') }
+    get inputCurrentTotalSavings () { return $('#current-total-savings') }
+    get inputCurrentAnnualSavings () { return $('#current-annual-savings') }
+    get inputCurrentSavingsIncreaseRate () { return $('#savings-increase-rate') }
+    get socialSecurityBenefitsRadioBtns () { return $$('[name="social-security-benefits"]')}
+    get maritalStatusRadioBtns () { return $$('[name="marital-status"]')}
     get btnCalculate () { return $('=Calculate') }
-
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
-    inputCurrentAge (currentAge) {
-        this.fieldCurrentAge.setValue(currentAge);
-        // this.inputUsername.setValue(username);
-        // this.inputPassword.setValue(password);
-        // this.btnSubmit.click(); 
-    }
 
     /**
      * overwrite specifc options to adapt it to page object
      */
     open () {
-        return super.open('/insights-tools/retirement-calculator.html');
+        return super.open('/insights-tools/retirement-calculator.html')
     }
 }
 

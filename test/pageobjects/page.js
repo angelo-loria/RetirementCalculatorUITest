@@ -10,4 +10,12 @@ module.exports = class Page {
     open (path) {
         return browser.url(baseUrl + path)
     }
+
+    selectBoolByValue(boolGroup, value) {
+        boolGroup.forEach(element => {
+            if(element.getValue() == value) {
+                browser.execute('arguments[0].click();', element);
+            }
+        });
+    }
 }

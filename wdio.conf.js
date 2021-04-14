@@ -60,6 +60,11 @@ exports.config = {
         maxInstances: 5,
         //
         browserName: 'chrome',
+        'goog:chromeOptions': {
+            // disable automated message infobar        
+            "excludeSwitches": [ "enable-automation" ],
+            "useAutomationExtension": false
+        },
         acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
@@ -188,8 +193,9 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-    before: function (capabilities, specs) {
-        global.baseUrl = "https://www.securian.com"
+    before: function (capabilities, specs, browser) {
+        global.baseUrl = "https://www.securian.com",
+        browser.maximizeWindow()      
     },
     /**
      * Runs before a WebdriverIO command gets executed.
