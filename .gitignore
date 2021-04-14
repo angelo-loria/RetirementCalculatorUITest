@@ -1,3 +1,6 @@
+.vscode/
+launch.json
+
 # Logs
 logs
 *.log
@@ -102,3 +105,5 @@ dist
 
 # TernJS port file
 .tern-port
+/.vs/slnx.sqlite
+/.vs/securian/v16/TestStore/0
