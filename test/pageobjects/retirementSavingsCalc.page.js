@@ -19,6 +19,7 @@ class RetirementSavingsCalc extends Page {
     get radioBtnsMaritalStatus () { return $$('[name="marital-status"]') }
 
     // adjust default values modal
+    // TODO: modal page object
     get inputAdditionalIncome () { return $('#additional-income') };
     get inputRetirementDuration () { return $('#retirement-duration') };
     get inputExpectedInflationRate () { return $('#expected-inflation-rate' ) };
@@ -30,6 +31,7 @@ class RetirementSavingsCalc extends Page {
     get btnSaveChanges () { return $('[value="Save changes"]') };
 
     // results display
+    // TODO: results page object
     get containerCalculatorResults() { return $('#calculator-results-container') };
 
     open () {
