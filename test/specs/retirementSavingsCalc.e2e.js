@@ -59,6 +59,7 @@ describe('Retirement Savings Calculator', () => {
 
         // verify results container displayed
         expect(RetirementSavingsCalc.containerCalculatorResults).toBeDisplayed();
+        expect(RetirementSavingsCalc.imageResultsChart).toBeDisplayed();
     });
 
     it('should allow form submission with all fields filled in', () => {
@@ -114,6 +115,7 @@ describe('Retirement Savings Calculator', () => {
 
         // verify results container displayed
         expect(RetirementSavingsCalc.containerCalculatorResults).toBeDisplayed();
+        expect(RetirementSavingsCalc.imageResultsChart).toBeDisplayed();
     });
 
     it('should display_hide additional Social Security fields based on Social Security benefits toggle', () => {
@@ -206,5 +208,6 @@ describe('Retirement Savings Calculator', () => {
 
         // verify results container displayed
         expect(RetirementSavingsCalc.containerCalculatorResults).toBeDisplayed();
+        expect(RetirementSavingsCalc.imageResultsChart).toBeDisplayed();
     });
 });

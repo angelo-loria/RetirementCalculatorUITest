@@ -33,6 +33,7 @@ class RetirementSavingsCalc extends Page {
     // results display
     // TODO: results page object
     get containerCalculatorResults() { return $('#calculator-results-container') };
+    get imageResultsChart() { return $('#results-chart') };
 
     open () {
         return super.open('/insights-tools/retirement-calculator.html');
