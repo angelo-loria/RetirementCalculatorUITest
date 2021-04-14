@@ -1,3 +1,7 @@
+/**
+ * 04/14/2021 securian case study by Angelo Loria https://github.com/angelo-loria/SecurianCaseStudy
+**/
+
 const RetirementSavingsCalc = require('../pageobjects/retirementSavingsCalc.page');
 
 var dataEnum = {
@@ -136,7 +140,7 @@ describe('Retirement Savings Calculator', () => {
         // open default values modal
         RetirementSavingsCalc.linkAdjustDefaultValues.click();
         
-        // input fields
+        // input fields on modal
         RetirementSavingsCalc.inputAdditionalIncome.waitForClickable();
         RetirementSavingsCalc
             .inputAdditionalIncome
