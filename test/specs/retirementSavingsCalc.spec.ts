@@ -3,7 +3,7 @@
 **/
 
 const RetirementSavingsCalc = require('../pageobjects/retirementSavingsCalc.page');
-const testData = require('../resources/retirementSavingsCalcData.json');
+import * as testData from '../resources/retirementSavingsCalcData.json';
 
 describe('Retirement Savings Calculator should calculate minimum required fields', () => {
     it('open retirement calculator', () => {

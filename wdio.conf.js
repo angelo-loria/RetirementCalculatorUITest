@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/*.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -63,7 +63,6 @@ exports.config = {
         'goog:chromeOptions': {
             // disable automated message infobar        
             "excludeSwitches": [ "enable-automation" ],
-            "useAutomationExtension": false
         },
         acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
@@ -126,7 +125,7 @@ exports.config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'mocha',
+    framework: 'jasmine',
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
