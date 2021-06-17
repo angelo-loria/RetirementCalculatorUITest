@@ -5,7 +5,7 @@ class RetirementSavingsCalc extends Page {
      * define selectors using getter methods, 
      * these are evaluated when you access the property
      */
-    get btnCalculate () { return $('=Calculate') }
+    get btnCalculate () { return $('[data-tag-id=submit]') }
     get inputCurrentAge () { return $('#current-age') }
     get inputRetirementAge () { return $('#retirement-age') }
     get inputCurrentAnnualIncome () { return $('#current-income') }
