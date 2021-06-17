@@ -76,6 +76,7 @@ exports.config = {
     // ===================
     // Define all options that are relevant for the WebdriverIO instance here
     //
+    baseUrl: 'https://www.securian.com',
     // Level of logging verbosity: trace | debug | info | warn | error | silent
     logLevel: 'info',
     //
@@ -146,10 +147,6 @@ exports.config = {
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
-    mochaOpts: {
-        ui: 'bdd',
-        timeout: 60000
-    },
     //
     // =====
     // Hooks
@@ -193,7 +190,7 @@ exports.config = {
      * @param {Object}         browser      instance of created browser/device session
      */
     before: function (capabilities, specs, browser) {
-        global.baseUrl = "https://www.securian.com",
+        // global.baseUrl = "https://www.securian.com",
         browser.maximizeWindow()      
     },
     /**
