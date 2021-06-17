@@ -19,7 +19,7 @@
     "wdio-chromedriver-service": "^7.1.0"
   },
   "scripts": {
-    "test": "wdio run wdio.conf.js"
+    "test": "wdio run wdio.conf.ts"
   },
   "repository": {
     "type": "git",
