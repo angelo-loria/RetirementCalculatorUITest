@@ -39,7 +39,7 @@ describe('Retirement Savings Calculator should calculate minimum required fields
     });
     it('verifies results container displayed', async () => {
         const calcResults = await RetirementSavingsCalc.imageResultsChart;
-        await expect(await calcResults).toBeDisplayed();
+        await expectAsync(calcResults).toBeDisplayed();
 
         // const resultsChart = await RetirementSavingsCalc.imageResultsChart;
         // expect(resultsChart).toBeDisplayed();
@@ -47,10 +47,10 @@ describe('Retirement Savings Calculator should calculate minimum required fields
 });
 
 describe('Retirement Savings Calculator should display_hide additional SS fields based on SS benefits toggle', () => {
-    it('open retirement calculator', () => {
-        RetirementSavingsCalc.open();
+    it('open retirement calculator', async () => {
+        await RetirementSavingsCalc.open();
     });  
-    it('SS benefits toggle', () => {
+    it('SS benefits toggle', async () => {
     RetirementSavingsCalc.selectRadioByValue(
         RetirementSavingsCalc.radioBtnsSocialSecurityBenefits, testData.ValueYes);
     });
