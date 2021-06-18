@@ -38,30 +38,30 @@ describe('Retirement Savings Calculator should calculate minimum required fields
         await btn.click();
     });
     it('verifies results container displayed', async () => {
-        const calcResults = await RetirementSavingsCalc.imageResultsChart;
-        await expect(await calcResults).toBeDisplayed();
+        const calcResults = await RetirementSavingsCalc.containerCalculatorResults;
+        await expect(calcResults).toBeDisplayed();
 
-        // const resultsChart = await RetirementSavingsCalc.imageResultsChart;
-        // expect(resultsChart).toBeDisplayed();
+        const resultsChart = await RetirementSavingsCalc.imageResultsChart;
+        await expect(resultsChart).toBeDisplayed();
     });       
 });
 
-describe('Retirement Savings Calculator should display_hide additional SS fields based on SS benefits toggle', () => {
-    it('open retirement calculator', () => {
-        RetirementSavingsCalc.open();
-    });  
-    it('SS benefits toggle', () => {
-    RetirementSavingsCalc.selectRadioByValue(
-        RetirementSavingsCalc.radioBtnsSocialSecurityBenefits, testData.ValueYes);
-    });
-    it('verify display additional SS fields', () => {
-        expect(RetirementSavingsCalc.radioBtnsMaritalStatus).toBeDisplayed()
-    });
-    it('SS benefits toggle', () => {
-        RetirementSavingsCalc.selectRadioByValue(
-            RetirementSavingsCalc.radioBtnsSocialSecurityBenefits, testData.ValueNo);
-    });
-    it('verify not display additional SS fields', () => {
-        expect(RetirementSavingsCalc.radioBtnsMaritalStatus).not.toBeDisplayed()
-    });
-});
+// describe('Retirement Savings Calculator should display_hide additional SS fields based on SS benefits toggle', () => {
+//     it('open retirement calculator', () => {
+//         RetirementSavingsCalc.open();
+//     });  
+//     it('SS benefits toggle', () => {
+//     RetirementSavingsCalc.selectRadioByValue(
+//         RetirementSavingsCalc.radioBtnsSocialSecurityBenefits, testData.ValueYes);
+//     });
+//     it('verify display additional SS fields', () => {
+//         expect(RetirementSavingsCalc.radioBtnsMaritalStatus).toBeDisplayed()
+//     });
+//     it('SS benefits toggle', () => {
+//         RetirementSavingsCalc.selectRadioByValue(
+//             RetirementSavingsCalc.radioBtnsSocialSecurityBenefits, testData.ValueNo);
+//     });
+//     it('verify not display additional SS fields', () => {
+//         expect(RetirementSavingsCalc.radioBtnsMaritalStatus).not.toBeDisplayed()
+//     });
+// });
