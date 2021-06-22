@@ -18,17 +18,11 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2
-    # - name: Use Node.js ${{ matrix.node-version }}
-    #   uses: actions/setup-node@v2
-    #   with:
-    #     node-version: ${{ matrix.node-version }}
-    - name: Install
-      uses: ianwalter/puppeteer-container@afefc4bee7341a77baa94503da684e2895ea5d30
+    - name: use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
       with:
-        args: npm install
-    - name: Test
-      uses: ianwalter/puppeteer-container@afefc4bee7341a77baa94503da684e2895ea5d30
-      with:
-        args: npm run test
-    # - run: npm install
-    # - run: npm test
+        node-version: ${{ matrix.node-version }}
+    - name: setup chromedriver
+      uses: nanasess/setup-chromedriver@master
+    - run: npm install
+    - run: npm test
