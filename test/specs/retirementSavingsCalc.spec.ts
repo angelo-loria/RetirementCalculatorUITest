@@ -40,28 +40,27 @@ describe('Retirement Savings Calculator should calculate minimum required fields
     it('verifies results container displayed', async () => {
         const calcResults = await RetirementSavingsCalc.imageResultsChart;
         await expectAsync(calcResults).toBeDisplayed();
-
-        // const resultsChart = await RetirementSavingsCalc.imageResultsChart;
-        // expect(resultsChart).toBeDisplayed();
     });       
 });
 
 describe('Retirement Savings Calculator should display_hide additional SS fields based on SS benefits toggle', () => {
     it('open retirement calculator', async () => {
-        await RetirementSavingsCalc.open();
-    });  
-    it('SS benefits toggle', async () => {
-    RetirementSavingsCalc.selectRadioByValue(
-        RetirementSavingsCalc.radioBtnsSocialSecurityBenefits, testData.ValueYes);
-    });
-    it('verify display additional SS fields', () => {
-        expect(RetirementSavingsCalc.radioBtnsMaritalStatus).toBeDisplayed()
-    });
-    it('SS benefits toggle', () => {
-        RetirementSavingsCalc.selectRadioByValue(
-            RetirementSavingsCalc.radioBtnsSocialSecurityBenefits, testData.ValueNo);
-    });
-    it('verify not display additional SS fields', () => {
-        expect(RetirementSavingsCalc.radioBtnsMaritalStatus).not.toBeDisplayed()
-    });
-});
+        await RetirementSavingsCalc.open()
+    })
+    it('SS benefits toggle yes', async () => {
+        const btn = await RetirementSavingsCalc.radioBtnYesSocialBenefits
+        browser.execute('arguments[0].click();', btn);    
+    })
+    it('verify display additional SS fields', async () => {
+        const maritalStatus = await RetirementSavingsCalc.radioBtnGroupMaritalStatus;
+        await expectAsync(maritalStatus).toBeDisplayed()
+    })
+    it('SS benefits toggle no', async () => {
+        const btn = await RetirementSavingsCalc.radioBtnNoSocialBenefits
+        browser.execute('arguments[0].click();', btn);    
+        })
+    it('verify not display additional SS fields', async () => {
+        const maritalStatus = await RetirementSavingsCalc.radioBtnGroupMaritalStatus;
+        await expectAsync(maritalStatus).not.toBeDisplayed() 
+       })
+})

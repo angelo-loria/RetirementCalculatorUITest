@@ -15,8 +15,9 @@ class RetirementSavingsCalc extends Page {
     get inputCurrentSavingsIncreaseRate (): Promise<WebdriverIO.Element> { return $('#savings-increase-rate') }
     get inputSocialSecurityOverride (): Promise<WebdriverIO.Element> { return $('#social-security-override') }
     get linkAdjustDefaultValues (): Promise<WebdriverIO.Element> { return $('=Adjust default values') }
-    get radioBtnsSocialSecurityBenefits (): Promise<WebdriverIO.Element[]> { return $$('[name="social-security-benefits"]') }
-    get radioBtnsMaritalStatus (): Promise<WebdriverIO.Element[]> { return $$('[name="marital-status"]') }
+    get radioBtnGroupMaritalStatus (): Promise<WebdriverIO.Element> { return $('#marital-status-toggle-group') }
+    get radioBtnNoSocialBenefits (): Promise<WebdriverIO.Element> { return $('#no-social-benefits')}
+    get radioBtnYesSocialBenefits (): Promise<WebdriverIO.Element> { return $('#yes-social-benefits')}
 
     // adjust default values modal
     // TODO: modal page object
@@ -27,7 +28,6 @@ class RetirementSavingsCalc extends Page {
     get inputPreRetirementRoi (): Promise<WebdriverIO.Element> { return $('#pre-retirement-roi') };
     get inputPostRetirementRoi (): Promise<WebdriverIO.Element> { return $('#post-retirement-roi') };
     get modalDefaultValues (): Promise<WebdriverIO.Element> { return $('#default-values-modal')};
-    get radioBtnsInflationInclusion (): Promise<WebdriverIO.Element[]> { return $$('[name="inflation-inclusion"') };
     get btnSaveChanges (): Promise<WebdriverIO.Element> { return $('[value="Save changes"]') };
 
     // results display
