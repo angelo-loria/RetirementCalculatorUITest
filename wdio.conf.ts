@@ -63,6 +63,7 @@ exports.config = {
         'goog:chromeOptions': {
             // disable automated message infobar        
             "excludeSwitches": [ "enable-automation" ],
+            args: ["--headless"]
         },
         acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
@@ -78,7 +79,7 @@ exports.config = {
     //
     baseUrl: 'https://www.securian.com',
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'warn',
     //
     // Set specific log levels per logger
     // loggers:
@@ -193,7 +194,6 @@ exports.config = {
      * @param {Object}         browser      instance of created browser/device session
      */
     before: function (capabilities, specs, browser) {
-        // global.baseUrl = "https://www.securian.com",
         browser.maximizeWindow()      
     },
     /**
