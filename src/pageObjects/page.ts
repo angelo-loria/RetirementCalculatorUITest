@@ -15,12 +15,11 @@ export default class Page {
     }
 
     /**
-     * Runs 
+     * Runs axe accessibility audit
      * @returns AxeCore.AxeResults results of AxeBuilder analysis
      */
     async axeAudit(): Promise<AxeCore.AxeResults>{
-        const client: WebdriverIO.Browser = browser
-        const builder: AxeBuilder = new AxeBuilder(client).withTags(['wcag21aa'])
+        const builder: AxeBuilder = new AxeBuilder(browser).withTags(['wcag21aa'])
 
         return await builder.analyze((err, results) => {
             if (err) {
