@@ -19,13 +19,16 @@ export default class Page {
      * @returns AxeCore.AxeResults results of AxeBuilder analysis
      */
     async axeAudit(): Promise<AxeCore.AxeResults>{
+        const client: WebdriverIO.Browser = browser
         const builder: AxeBuilder = new AxeBuilder(browser).withTags(['wcag21aa'])
 
-        return await builder.analyze((err, results) => {
-            if (err) {
-              console.log(err)
-            }
-            console.log(results);
-        })
+        return builder.analyze()
+
+        // return await builder.analyze((err, results) => {
+        //     if (err) {
+        //       console.log(err)
+        //     }
+        //     console.log(results);
+        // })
     }
 }

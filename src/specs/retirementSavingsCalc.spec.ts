@@ -39,10 +39,7 @@ describe('Retirement Savings Calculator should calculate minimum required fields
     })
     it('should pass axe accessibility audit', async () => {
         const results = await RetirementSavingsCalc.axeAudit()
-        expect(results.violations.length)
-            .toBeLessThanOrEqual(0, `axe violations found: ${results.violations.forEach(violation => {
-                console.log(violation.toString)
-            })}`)
+        expect(results.violations.length).toBeLessThanOrEqual(0, 'axe violations found')
     })
 })
 
