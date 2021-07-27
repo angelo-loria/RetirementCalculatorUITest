@@ -1,3 +1,5 @@
+import AxeBuilder from '@axe-core/webdriverjs'
+
 /**
 * main page object containing all methods, selectors and functionality
 * that is shared across all page objects
@@ -10,4 +12,6 @@ export default class Page {
     async open (path: string): Promise<void> {
         await browser.url(browser.config.baseUrl + path)
     }
+    
+
 }
