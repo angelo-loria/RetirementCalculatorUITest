@@ -37,10 +37,6 @@ describe('Retirement Savings Calculator should calculate minimum required fields
         const calcResults = await RetirementSavingsCalc.imageResultsChart
         await expectAsync(calcResults).toBeDisplayed()
     })
-    it('should pass axe accessibility audit', async () => {
-        const results = await RetirementSavingsCalc.axeAudit()
-        expect(results.violations.length).toBeLessThanOrEqual(0, 'axe violations found')
-    })
 })
 
 describe('Retirement Savings Calculator should display_hide additional SS fields based on SS benefits toggle', () => {
