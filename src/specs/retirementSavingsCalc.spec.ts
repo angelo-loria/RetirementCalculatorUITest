@@ -1,4 +1,4 @@
-import RetirementSavingsCalc from '../pageobjects/retirementSavingsCalc.page'
+import RetirementSavingsCalc from '../pageObjects/retirementSavingsCalc.page'
 import * as testData from '../resources/retirementSavingsCalcData.json'
 
 describe('Retirement Savings Calculator should calculate minimum required fields', () => {

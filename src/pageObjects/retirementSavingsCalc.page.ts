@@ -1,6 +1,8 @@
-const Page = require('./page');
+import Page from './page';
 
 class RetirementSavingsCalc extends Page {
+    // const calcUrl: string = '/insights-tools/retirement-calculator.html'
+
     /**
      * define selectors using getter methods, 
      * these are evaluated when you access the property
@@ -20,7 +22,6 @@ class RetirementSavingsCalc extends Page {
     get radioBtnYesSocialBenefits (): Promise<WebdriverIO.Element> { return $('#yes-social-benefits') }
 
     // adjust default values modal
-    // TODO: modal page object
     get inputAdditionalIncome (): Promise<WebdriverIO.Element> { return $('#additional-income') }
     get inputRetirementDuration (): Promise<WebdriverIO.Element> { return $('#retirement-duration') }
     get inputExpectedInflationRate (): Promise<WebdriverIO.Element> { return $('#expected-inflation-rate' ) }
@@ -31,12 +32,12 @@ class RetirementSavingsCalc extends Page {
     get btnSaveChanges (): Promise<WebdriverIO.Element> { return $('[value="Save changes"]') }
 
     // results display
-    // TODO: results page object
     get containerCalculatorResults (): Promise<WebdriverIO.Element> { return $('#calculator-results-container') }
     get imageResultsChart (): Promise<WebdriverIO.Element> { return $('#results-chart') }
 
     async open (): Promise<void> {
-        return await super.open('/insights-tools/retirement-calculator.html')
+        var caclUrl: string = '/insights-tools/retirement-calculator.html'
+        await super.open(caclUrl)
     }
 }
 
