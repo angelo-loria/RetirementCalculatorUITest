@@ -6,36 +6,28 @@ describe('Retirement Savings Calculator should calculate minimum required fields
         await RetirementSavingsCalc.open()
     })
     it('set current age', async () =>  {
-        const input = await RetirementSavingsCalc.inputCurrentAge
-        await input.setValue(testData.CurrentAge)
+        await RetirementSavingsCalc.inputCurrentAge.setValue(testData.CurrentAge)
     })
     it('set retirement age', async () => {
-        const input = await RetirementSavingsCalc.inputRetirementAge
-        await input.setValue(testData.RetirementAge)
+        await RetirementSavingsCalc.inputRetirementAge.setValue(testData.RetirementAge)
     })
     it('set current annual income', async () => {
-        const input = await RetirementSavingsCalc.inputCurrentAnnualIncome
-        await input.setValue(testData.CurrentAnnualIncome)
+        await RetirementSavingsCalc.inputCurrentAnnualIncome.setValue(testData.CurrentAnnualIncome)
     })
     it('set current retirement savings', async () => {
-        const input = await RetirementSavingsCalc.inputCurrentTotalSavings
-        await input.setValue(testData.CurrentRetirementSavings)
+        await RetirementSavingsCalc.inputCurrentTotalSavings.setValue(testData.CurrentRetirementSavings)
     })
     it('set current annual savings', async () => {
-        const input = await RetirementSavingsCalc.inputCurrentAnnualSavings
-        await input.setValue(testData.CurrentRetirementContribution)
+        await RetirementSavingsCalc.inputCurrentAnnualSavings.setValue(testData.CurrentRetirementContribution)
     })
     it('set current savings increase rate', async () => {
-        const input = await RetirementSavingsCalc.inputCurrentSavingsIncreaseRate
-        await input.setValue(testData.AnnualRetirementContribution)
+        await RetirementSavingsCalc.inputCurrentSavingsIncreaseRate.setValue(testData.AnnualRetirementContribution)
     })
     it('click Calculate button', async () => {
-        const btn = await RetirementSavingsCalc.btnCalculate
-        await btn.click()
+        await RetirementSavingsCalc.btnCalculate.click()
     })
     it('verifies results container displayed', async () => {
-        const calcResults = await RetirementSavingsCalc.imageResultsChart
-        await expectAsync(calcResults).toBeDisplayed()
+        await expectAsync(RetirementSavingsCalc.imageResultsChart).toBeDisplayed()
     })
 })
 
@@ -44,19 +36,15 @@ describe('Retirement Savings Calculator should display_hide additional SS fields
         await RetirementSavingsCalc.open()
     })
     it('SS benefits toggle yes', async () => {
-        const btn = await RetirementSavingsCalc.radioBtnYesSocialBenefits
-        browser.execute('arguments[0].click();', btn)
+        browser.execute('arguments[0].click();', await RetirementSavingsCalc.radioBtnYesSocialBenefits)
     })
     it('verify display additional SS fields', async () => {
-        const maritalStatus = await RetirementSavingsCalc.radioBtnGroupMaritalStatus
-        await expectAsync(maritalStatus).toBeDisplayed()
+        await expectAsync(RetirementSavingsCalc.radioBtnGroupMaritalStatus).toBeDisplayed()
     })
     it('SS benefits toggle no', async () => {
-        const btn = await RetirementSavingsCalc.radioBtnNoSocialBenefits
-        browser.execute('arguments[0].click();', btn)
+        browser.execute('arguments[0].click();', await RetirementSavingsCalc.radioBtnNoSocialBenefits)
         })
     it('verify not display additional SS fields', async () => {
-        const maritalStatus = await RetirementSavingsCalc.radioBtnGroupMaritalStatus
-        await expectAsync(maritalStatus).not.toBeDisplayed() 
+        await expectAsync(RetirementSavingsCalc.radioBtnGroupMaritalStatus).not.toBeDisplayed() 
     })
 })

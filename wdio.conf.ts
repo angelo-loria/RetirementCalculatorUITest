@@ -129,7 +129,8 @@ exports.config = {
     // before running any tests.
     framework: 'jasmine',
     jasmineOpts: {
-        defaultTimeoutInterval: 20000
+        defaultTimeoutInterval: 20000,
+        failFast: true
     },
     //
     // The number of times to retry the entire specfile when it fails as a whole
@@ -193,9 +194,8 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-    before: function (capabilities, specs, browser) {
-        browser.maximizeWindow()      
-    },
+    // before: function (capabilities, specs, browser) {
+    // },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name

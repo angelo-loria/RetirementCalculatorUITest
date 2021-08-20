@@ -1,18 +1,17 @@
 {
-  "name": "securian-case-study",
-  "version": "1.0.0",
-  "description": "R-001933 case study",
+  "name": "WebdriverIOdemo",
+  "version": "1.1.0",
   "main": "wdio.conf.js",
   "directories": {
     "test": "test"
   },
   "devDependencies": {
-    "@wdio/cli": "^7.8.0",
-    "@wdio/jasmine-framework": "^7.8.0",
-    "@wdio/local-runner": "^7.8.0",
-    "@wdio/spec-reporter": "^7.8.0",
-    "chromedriver": "^91.0.1",
-    "ts-node": "^10.1.0",
+    "@wdio/cli": "^7.10.0",
+    "@wdio/jasmine-framework": "^7.10.0",
+    "@wdio/local-runner": "^7.10.0",
+    "@wdio/spec-reporter": "^7.10.0",
+    "chromedriver": "^92.0.1",
+    "ts-node": "^10.2.1",
     "typescript": "^4.3.5",
     "wdio-chromedriver-service": "^7.2.0"
   },
@@ -21,11 +20,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/angelo-loria/SecurianCaseStudy.git"
+    "url": "git+https://github.com/angelo-loria/WebDriverIODemo/.git"
   },
   "author": "Angelo Loria",
   "bugs": {
-    "url": "https://github.com/angelo-loria/SecurianCaseStudy/issues"
+    "url": "https://github.com/angelo-loria/WebDriverIODemo/issues"
   },
-  "homepage": "https://github.com/angelo-loria/SecurianCaseStudy#readme"
+  "homepage": "https://github.com/angelo-loria/WebDriverIODemo/#readme"
 }
