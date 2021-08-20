@@ -6,8 +6,8 @@ describe('Retirement Savings Calculator should calculate minimum required fields
         await RetirementSavingsCalc.open()
     })
     it('set current age', async () =>  {
-        const input = await RetirementSavingsCalc.inputCurrentAge
-        await input.setValue(testData.CurrentAge)
+        // const input = await RetirementSavingsCalc.inputCurrentAge
+        await RetirementSavingsCalc.inputCurrentAge.setValue(testData.CurrentAge)
     })
     it('set retirement age', async () => {
         const input = await RetirementSavingsCalc.inputRetirementAge
