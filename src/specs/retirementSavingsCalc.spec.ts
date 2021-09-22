@@ -9,12 +9,15 @@ describe('Retirement Savings Calculator should calculate minimum required fields
         await RetirementSavingsCalc.inputCurrentAge.setValue(testData.CurrentAge)
     })
     it('set retirement age', async () => {
+        await RetirementSavingsCalc.inputRetirementAge.click() // click to set cursor to right of placeholder text in field 
         await RetirementSavingsCalc.inputRetirementAge.setValue(testData.RetirementAge)
     })
     it('set current annual income', async () => {
+        await RetirementSavingsCalc.inputCurrentAnnualIncome.click() // click to set cursor to right of placeholder text in field
         await RetirementSavingsCalc.inputCurrentAnnualIncome.setValue(testData.CurrentAnnualIncome)
     })
     it('set current retirement savings', async () => {
+        await RetirementSavingsCalc.inputCurrentTotalSavings.click() // click to set cursor to right of placeholder text in field
         await RetirementSavingsCalc.inputCurrentTotalSavings.setValue(testData.CurrentRetirementSavings)
     })
     it('set current annual savings', async () => {
