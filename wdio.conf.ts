@@ -130,7 +130,7 @@ exports.config = {
     framework: 'jasmine',
     jasmineOpts: {
         defaultTimeoutInterval: 20000,
-        failFast: true
+        stopOnSpecFailure: true
     },
     //
     // The number of times to retry the entire specfile when it fails as a whole
