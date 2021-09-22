@@ -1,5 +1,5 @@
 import { AxeResults } from 'axe-core'
-const AxeBuilder = require('@axe-core/webdriverio').default
+import AxeBuilder from '@axe-core/webdriverio'
 
 /**
 * main page object containing all methods, selectors and functionality
@@ -14,8 +14,14 @@ export default class Page {
         await browser.url(browser.config.baseUrl + path)
     }
 
+    /**
+     * Runs accessibility audit on page
+     * See https://www.deque.com/axe/core-documentation/api-documentation/#api-notes 
+     * @returns Promise<AxeResults>
+     */
     async axeAudit (): Promise<AxeResults> {
-        const builder = new AxeBuilder({ browser }).withTags('wcag2a');
+        const client = browser
+        const builder = new AxeBuilder({ client }).withTags('wcag2a');
         return builder.analyze()
     }
 }
