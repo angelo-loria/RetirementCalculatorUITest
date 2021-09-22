@@ -1,5 +1,6 @@
 import RetirementSavingsCalc from '../pageObjects/retirementSavingsCalc.page'
 import * as testData from '../resources/retirementSavingsCalcData.json'
+import { AxeResults } from 'axe-core'
 
 describe('Retirement Savings Calculator should calculate minimum required fields', () => {
     it('open retirement calculator', async () => {
@@ -9,15 +10,16 @@ describe('Retirement Savings Calculator should calculate minimum required fields
         await RetirementSavingsCalc.inputCurrentAge.setValue(testData.CurrentAge)
     })
     it('set retirement age', async () => {
-        await RetirementSavingsCalc.inputRetirementAge.click() // click to set cursor to right of placeholder text in field 
+        // click to set cursor to right of placeholder text in field 
+        await RetirementSavingsCalc.inputRetirementAge.click()
         await RetirementSavingsCalc.inputRetirementAge.setValue(testData.RetirementAge)
     })
     it('set current annual income', async () => {
-        await RetirementSavingsCalc.inputCurrentAnnualIncome.click() // click to set cursor to right of placeholder text in field
+        await RetirementSavingsCalc.inputCurrentAnnualIncome.click()
         await RetirementSavingsCalc.inputCurrentAnnualIncome.setValue(testData.CurrentAnnualIncome)
     })
     it('set current retirement savings', async () => {
-        await RetirementSavingsCalc.inputCurrentTotalSavings.click() // click to set cursor to right of placeholder text in field
+        await RetirementSavingsCalc.inputCurrentTotalSavings.click()
         await RetirementSavingsCalc.inputCurrentTotalSavings.setValue(testData.CurrentRetirementSavings)
     })
     it('set current annual savings', async () => {
@@ -32,6 +34,10 @@ describe('Retirement Savings Calculator should calculate minimum required fields
     it('verifies results container displayed', async () => {
         await expect(RetirementSavingsCalc.imageResultsChart).toBeDisplayed()
     })
+    it('executes accessibiilty audit', async () => {
+        const results: AxeResults = await RetirementSavingsCalc.axeAudit()
+        expect(results.violations.length).toBeLessThanOrEqual(3)
+    })
 })
 
 describe('Retirement Savings Calculator should display_hide additional SS fields based on SS benefits toggle', () => {
@@ -39,6 +45,7 @@ describe('Retirement Savings Calculator should display_hide additional SS fields
         await RetirementSavingsCalc.open()
     })
     it('SS benefits toggle yes', async () => {
+        // example javascript click
         browser.execute('arguments[0].click();', await RetirementSavingsCalc.radioBtnYesSocialBenefits)
     })
     it('verify display additional SS fields', async () => {
