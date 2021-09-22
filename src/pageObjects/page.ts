@@ -1,3 +1,6 @@
+import { AxeResults } from 'axe-core'
+const AxeBuilder = require('@axe-core/webdriverio').default
+
 /**
 * main page object containing all methods, selectors and functionality
 * that is shared across all page objects
@@ -9,5 +12,10 @@ export default class Page {
     */
     async open(path: string): Promise<void> {
         await browser.url(browser.config.baseUrl + path)
+    }
+
+    async axeAudit (): Promise<AxeResults> {
+        const builder = new AxeBuilder({ browser }).withTags('wcag2a');
+        return builder.analyze()
     }
 }

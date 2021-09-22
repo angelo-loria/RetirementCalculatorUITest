@@ -1,5 +1,6 @@
 import RetirementSavingsCalc from '../pageObjects/retirementSavingsCalc.page'
 import * as testData from '../resources/retirementSavingsCalcData.json'
+import { AxeResults } from 'axe-core'
 
 describe('Retirement Savings Calculator should calculate minimum required fields', () => {
     it('open retirement calculator', async () => {
@@ -27,7 +28,11 @@ describe('Retirement Savings Calculator should calculate minimum required fields
         await RetirementSavingsCalc.btnCalculate.click()
     })
     it('verifies results container displayed', async () => {
-        await expectAsync(RetirementSavingsCalc.imageResultsChart).toBeDisplayed()
+        await expect(RetirementSavingsCalc.imageResultsChart).toBeDisplayed()
+    })
+    it('executes accessibiilty audit', async () => {
+        const results: AxeResults = await RetirementSavingsCalc.axeAudit()
+        expect(results.violations.length).toBeLessThanOrEqual(3)
     })
 })
 
