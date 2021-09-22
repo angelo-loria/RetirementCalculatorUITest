@@ -30,7 +30,7 @@ describe('Retirement Savings Calculator should calculate minimum required fields
         await RetirementSavingsCalc.btnCalculate.click()
     })
     it('verifies results container displayed', async () => {
-        await expectAsync(RetirementSavingsCalc.imageResultsChart).toBeDisplayed()
+        await expect(RetirementSavingsCalc.imageResultsChart).toBeDisplayed()
     })
 })
 
@@ -48,6 +48,6 @@ describe('Retirement Savings Calculator should display_hide additional SS fields
         browser.execute('arguments[0].click();', await RetirementSavingsCalc.radioBtnNoSocialBenefits)
         })
     it('verify not display additional SS fields', async () => {
-        await expectAsync(RetirementSavingsCalc.radioBtnGroupMaritalStatus).not.toBeDisplayed() 
+        await expect(RetirementSavingsCalc.radioBtnGroupMaritalStatus).not.toBeDisplayed() 
     })
 })
